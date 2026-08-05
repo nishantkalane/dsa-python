@@ -1,0 +1,17 @@
+# 🧩 Patterns Library
+
+- [`Sliding Window`](./sliding_window.md)
+- [`Two Pointers`](./two_pointers.md)
+- [`Fast & Slow Pointers`](./fast_slow_pointers.md)
+- [`Merge Intervals`](./merge_intervals.md)
+- [`Binary Search on Answer`](./binary_search_on_answer.md)
+- [`Top K Elements (Heap)`](./top_k_elements.md)
+- [`Backtracking`](./backtracking_template.md)
+- [`Graph DFS / BFS`](./dfs_bfs_graph.md)
+- [`Topological Sort`](./topological_sort.md)
+- [`Union-Find (DSU)`](./union_find.md)
+- [`0/1 Knapsack DP`](./dp_knapsack.md)
+- [`Longest Increasing Subsequence DP`](./dp_lis.md)
+- [`Prefix Sum`](./prefix_sum.md)
+- [`Monotonic Stack`](./monotonic_stack.md)
+- [`Trie`](./trie_pattern.md)
