@@ -1,13 +1,13 @@
 ## Mistake 1
 
-Problem
+Problem:
 
-Two Sum
+Patterns_01_rectangle (Basics01)
 
 Mistake
 
-Forgot duplicate values.
+Placed the outerloop next line print() outside it
 
 Lesson
 
-Always consider repeated elements.
+Always check where you have placed the print.
