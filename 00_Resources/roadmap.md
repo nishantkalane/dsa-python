@@ -8,7 +8,7 @@ adding revision notes in `revision_tracker.md`.
 - [X] Learn Basics of Python such as input/output, if else, loops and functions
 - [X] Time Complexity
 - [ ] Star Patterns
-      - [X] Rectangle, 
+      - [X] Rectangle, [X] Right Angled Triangle
 - [ ] Sorting
 - [ ] Arrays
 - [ ] Binary Search

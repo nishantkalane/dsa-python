@@ -134,3 +134,33 @@ Every pattern can be solved by answering two questions:
 2. **What should I print in each row?**
 
 Once you can answer these, the code becomes straightforward.
+
+"""
+Problem:
+
+Platform:
+    LeetCode
+
+Difficulty:
+
+Topic:
+
+Pattern:
+
+Approach:
+
+
+Time Complexity:
+
+Space Complexity:
+
+Date Solved:
+
+Revision:
+    □ Rev1
+    □ Rev2
+    □ Rev3
+
+Notes:
+
+"""
