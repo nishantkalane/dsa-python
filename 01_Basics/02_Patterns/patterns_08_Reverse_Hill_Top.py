@@ -1,64 +1,75 @@
 """
 Problem:
-Problem Statement: Given an integer N, print the following pattern :
+Given an integer N, print the following pattern:
 
-*
-**
-***
-****
-*****
+*********
+ *******
+  *****
+   ***
+    *
+
 Platform:
-    Striver's sheet
+Striver's Sheet
 
-Difficulty:
-easy
-
-Topic: Paterns
-loops
-rows
-columns
+Topic:
+Pattern Printing
 
 Pattern:
+Inverted Pyramid / Reverse Hill
+
+Difficulty:
+Easy
 
 Approach:
+The pattern is the inverted version of the star pyramid.
 
+1. Increase the number of leading spaces.
+2. Decrease the number of stars in each row.
+3. Use two star loops to form the decreasing star pattern.
+4. Remove one column from the first star loop to form the
+   correct hill shape.
 
 Time Complexity:
+O(N²)
 
 Space Complexity:
+O(1)
 
 Date Solved:
+12/08/2026
+
+Mistake:
+Initially used range(i, n) in the first star loop.
+This printed one extra column and the hill shape was incorrect.
+Changing it to range(i, n - 1) removed the extra column.
+
+Key Takeaway:
+When combining patterns, adjusting the range by one can
+be necessary to avoid duplicating the middle/edge element.
 
 Revision:
-    □ Rev1
-    □ Rev2
-    □ Rev3
-
-Notes:
+[ ] Rev 1
+[ ] Rev 2
+[ ] Rev 3
 """
-def pattern_08_reverse_hill_top(n):
-    for i in range(n):
-        for j in range(i+1):
-            print(" ", end=" ")
-        for j in range(i,n-1):
-            print("*", end=" ")
-        for j in range(i,n):
-            print("*", end= " ")
-        print()
 
-pattern_08_reverse_hill_top(5)
-
-
-
-'''
-Observation: 
-patterns_01_rectangle: 5/8/2026
-
-Outer loop prints for rows n times from 0 to n-1
-Inner loop prints for n times from 0 to n-1
-Print was used inside the inner loop for printing the star and end=" "was added to keep the cursor on the same line
-print() was used in outer loop to jump to next line as end= " " kept cursor on the same line.
+class Solution:
+    def pattern_08(self,n):
+        for i in range(n):
+            #Print left spaces
+            for j in range(i+1):
+                print(" ", end=" ")
+            #Print decreasing triangle stars
+            #Adjust the (i,n) to print the hill top
+            for j in range(i,n-1):
+                print("*", end=" ")
+            #Print stars of leading decreasing triangle
+            for j in range(i,n):
+                print("*", end= " ")
+            print()
 
 
-#mistake: Hill top didn't come had to remove one column by doing ( i, n-1) 
-'''
+if __name__ == "__main__":
+    sol=Solution()
+    n=5
+    sol.pattern_08(n)

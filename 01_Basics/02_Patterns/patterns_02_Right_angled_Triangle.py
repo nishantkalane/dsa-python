@@ -1,72 +1,67 @@
+
 """
 Problem:
-Problem Statement: Given an integer N, print the following pattern :
+Given an integer N, print a right-angled triangle pattern
+where the number of stars increases by one in every row.
 
+Example:
 *
-**
-***
-****
-*****
+* *
+* * *
+* * * *
+* * * * *
+
 Platform:
-    Striver's sheet
+Striver's Sheet
+
+Topic:
+Pattern Printing
+
+Pattern:
+Increasing Pattern
 
 Difficulty:
-easy
-
-Topic: Paterns
-loops
-rows
-columns
-printing
+Easy
 
 Approach:
-This is one of the simplest star patterns. We need to form a right-angled triangle where the number of stars in each row increases line by line. Row i contains exactly i + 1 stars.
-Run increasing pattern:
-    Run an outer loop from 0 to N-1 to handle rows.
-    For each row i, run an inner loop from 0 to i +1 for total N columns to print rightly.
-    In the inner loop, print a star (*).
-    After finishing the stars of one row, move to the next line using endl.
+The outer loop controls the rows.
+For row i, the inner loop runs i + 1 times to print
+the required number of stars.
+After each row, print() moves to the next line.
 
 Time Complexity:
-O(N^2), Outer loop runs N times , and the inner loop runs up to N stars overall
-Space Complexity: O(1), No extra space is used apart from loop counters.
+O(N²)  Outer loop runs N times , and the inner loop runs up to N stars overall
+
+Space Complexity:
+O(1)
+
 Date Solved:
+11/08/2026
+
+Mistake:
+Forgot the second == in:
+if __name__ == "__main__":
+
+Key Takeaway:
+The number of elements can be made to increase with
+the row number by using range(i + 1).
 
 Revision:
-    □ Rev1
-    □ Rev2
-    □ Rev3
-
-Notes:
+[ ] Rev 1
+[ ] Rev 2
+[ ] Rev 3
 """
+
 class Solution:
-    #Function to pattern_02
     def pattern_02(self,n):
         #Loop for rows
         for i in range(n):
-            #Loop for columns
+            # i + 1 creates an increasing number of stars per row
             for j in range(i+1):
                 #Print stars in each row
                 print("*" ,end=" ")
             print()
 if __name__ == "__main__" :
-    #Create Solution object
     sol= Solution()
-    #Define n
     n=5
-    #Call pattern Function
     sol.pattern_02(n)
-
-'''
-Observation: 
-patterns_01_rectangle: 11/8/2026
-
-Outer loop prints for rows n times from 0 to n-1
-Inner loop prints for n times from 0 to i+1
-Print was used inside the inner loop for printing the star and end=" "was added to keep the cursor on the same line
-print() was used in outer loop to jump to next line as end= " " kept cursor on the same line.
-
-Using increasing pattern we can solve similar questions
-mistakes: forgot to add 2 == after if __name__ ==
-
-'''

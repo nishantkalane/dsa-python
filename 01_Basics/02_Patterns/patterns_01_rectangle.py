@@ -1,66 +1,114 @@
 """
-Problem: Given an integer N, print the following pattern.
-          * * * *
-          * * * *
-          * * * *
-          * * * *
+Problem:
+Given an integer N, print a square pattern of stars.
+
+Example:
+* * * *
+* * * *
+* * * *
+* * * *
 
 Platform:
-    Striver's sheet
-
-Difficulty: easy
+Striver's Sheet
 
 Topic:
-Nested Loops
-rows
-columns
-printing on correct line
+Pattern Printing
+
+Pattern:
+Rectangle
+
+Difficulty:
+Easy
 
 Approach:
-Take an integer N as input to define the size of the square.
-Use a loop from 0 to N-1 to represent each row.
-Inside that loop, use another loop from 0 to N-1 to print stars in the current row.
-Print "* " during each inner loop iteration to form the row.
-After each inner loop completes, move to the next line.
+The outer loop controls the rows.
+The inner loop prints N stars in each row.
+After each row, print() moves to the next line.
 
-Time Complexity: O(N^2)  As we print N stars for N times.
+Time Complexity:
+O(N²)
 
-Space Complexity: O(1)
+Space Complexity:
+O(1)
 
 Date Solved:
-5/8/2026
+05/08/2026
+
+Mistake:
+-
+
+Key Takeaway:
+Outer loop → rows
+Inner loop → columns/elements in each row
 
 Revision:
-    □ Rev1
-    □ Rev2
-    □ Rev3
-
-Notes:
-
+[ ] Rev 1
+[ ] Rev 2
+[ ] Rev 3
 """
-class solution():
+"""
+Problem:
+Given an integer N, print a right-angled triangle pattern
+where the number of stars increases by one in every row.
+
+Example:
+*
+* *
+* * *
+* * * *
+* * * * *
+
+Platform:
+Striver's Sheet
+
+Topic:
+Pattern Printing
+
+Pattern:
+Increasing Pattern
+
+Difficulty:
+Easy
+
+Approach:
+The outer loop controls the rows.
+For row i, the inner loop runs i + 1 times to print
+the required number of stars.
+After each row, print() moves to the next line.
+
+Time Complexity:
+O(N²)
+
+Space Complexity:
+O(1)
+
+Date Solved:
+11/08/2026
+
+Mistake:
+Forgot the second == in:
+if __name__ == "__main__":
+
+Key Takeaway:
+The number of elements can be made to increase with
+the row number by using range(i + 1).
+
+Revision:
+[ ] Rev 1
+[ ] Rev 2
+[ ] Rev 3
+"""
+
+
+class Solution():
     def pattern1(self,n):
         for i in range(n):
             for j in range(n):
                 print("*", end=' ')
             print()
 
-sol=solution()
+sol=Solution()
 n=int(input("How many stars do you want in your column and rows ? "))
 sol.pattern1(n)
 
 
-'''
-Observation: 
-patterns_01_rectangle: 5/8/2026
-
-Outer loop prints for rows n times from 0 to n-1
-Inner loop prints for n times from 0 to n-1
-Print was used inside the inner loop for printing the star and end=" "was added to keep the cursor on the same line
-print() was used in outer loop to jump to next line as end= " " kept cursor on the same line.
-
-
-
-
-
-'''

@@ -1,71 +1,95 @@
 """
 Problem:
-Problem Statement: Given an integer N, print the following pattern :
+Given an integer N, print a diamond pattern of stars.
 
-*
-**
-***
-****
-*****
+Example:
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+
 Platform:
-    Striver's sheet
+Striver's Sheet
 
-Difficulty:
-easy
-
-Topic: Paterns
-loops
-rows
-columns
+Topic:
+Pattern Printing
 
 Pattern:
+Diamond Pattern
+
+Difficulty:
+Medium
 
 Approach:
+Build the diamond using two parts:
 
+1. Erect pyramid
+   - Increasing stars
+   - Decreasing leading spaces
+
+2. Inverted pyramid
+   - Decreasing stars
+   - Increasing leading spaces
+
+The last row of the erect pyramid is omitted so that
+the middle row is not printed twice.
 
 Time Complexity:
+O(N²)
 
 Space Complexity:
+O(1)
 
 Date Solved:
+12/08/2026
+
+Mistake:
+-
+
+Key Takeaway:
+Complex patterns can be created by combining previously
+learned patterns.
+
+When combining two patterns, check whether a row is
+being duplicated at the joining point.
 
 Revision:
-    □ Rev1
-    □ Rev2
-    □ Rev3
-
-Notes:
+[ ] Rev 1
+[ ] Rev 2
+[ ] Rev 3
 """
 
-def patterns_09_Diamond(n):
-    for i in range(n-1):
-        for j in range(i,n):
-            print(" ", end= " ")
-        for j in range(i):
-            print("*", end= " ")
-        for j in range(i+1):
-            print("*", end=" ")
-        print()
-    for i in range(n):
-        for j in range(i+1):
-            print(" ", end=" ")
-        for j in range(i,n-1):
-            print("*", end= " ")
-        for j in range(i,n):
-            print("*",end=" ")
-        print()
+class Solution:
+    def pattern_09(slef,n):
+        # erect pyramid One row is deleted to keep the diamond shape
+        for i in range(n-1):
+            for j in range(i,n):
+                print(" ", end =" ")
+                        #Keep the range to i instead of i+1 to remove one colimn and have a hill top
+            for j in range(i):
+                print("*", end=" ")
+            for j in range(i+1):
+                print("*",end=" ")
+            print()
 
-patterns_09_Diamond(5)
-'''
-Observation: 
-patterns_01_rectangle: 5/8/2026
-
-Outer loop prints for rows n times from 0 to n-1
-Inner loop prints for n times from 0 to n-1
-Print was used inside the inner loop for printing the star and end=" "was added to keep the cursor on the same line
-print() was used in outer loop to jump to next line as end= " " kept cursor on the same line.
+        for i in range(n):
+            for j in range(i+1):
+                print(" ", end=" ")
+            #Adjust the (i,n) to print the hill top
+            for j in range(i,n-1):
+                print("*", end=" ")
+            for j in range(i,n):
+                print("*", end= " ")
+            print()
 
 
-#mistakes :- Hill top of reverse one has to be solved my removing one column of printing stars from the middle loop of printing
--Hill Top and reverse hill top do not form a diamond, so to do that we remove one column for the outer for loop ( n-1 )
-'''
+if __name__ == "__main__":
+    sol=Solution()
+    n=5
+    sol.pattern_09(n)
+

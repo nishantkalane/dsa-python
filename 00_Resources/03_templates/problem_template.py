@@ -1,38 +1,44 @@
 """
 Problem:
-
 Platform:
-    LeetCode
-
-Difficulty:
+Link:
 
 Topic:
-
 Pattern:
+Difficulty:
 
 Approach:
-
+-
 
 Time Complexity:
+-
 
 Space Complexity:
+-
 
 Date Solved:
+-
+
+Mistake:
+-
+
+Key Takeaway:
+-
 
 Revision:
-    □ Rev1
-    □ Rev2
-    □ Rev3
-
-Notes:
-
+[ ] Rev 1
+[ ] Rev 2
+[ ] Rev 3
 """
 
 
-def solution(*args, **kwargs):
-    pass
+class Solution:
+
+    def solve(self):
+        pass
 
 
 if __name__ == "__main__":
-    # Quick manual test area
-    pass
+    solution = Solution()
+
+    # Test your solution here

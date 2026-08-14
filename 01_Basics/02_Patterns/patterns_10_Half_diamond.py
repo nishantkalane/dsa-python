@@ -1,60 +1,74 @@
 """
 Problem:
-Problem Statement: Given an integer N, print the following pattern :
-* * *
-* *
+Given an integer N, print the following pattern:
+
 *
+**
+***
+****
+*****
+****
+***
+**
+*
+
 Platform:
-    Striver's sheet
+Striver's Sheet
 
-Difficulty:
-easy
-
-Topic: Paterns
-loops
-rows
-columns
+Topic:
+Pattern Printing
 
 Pattern:
+Half Diamond
+
+Difficulty:
+Easy
 
 Approach:
+Build the pattern using two parts:
 
+1. Increasing triangle
+2. Decreasing triangle
+
+The last row of the increasing triangle is omitted so
+that the middle row is not printed twice.
 
 Time Complexity:
+O(N²)
 
 Space Complexity:
+O(1)
 
 Date Solved:
+12/08/2026
+
+Mistake:
+Initially did not remove the middle row, which caused
+the maximum row to be printed twice.
+
+Key Takeaway:
+When combining increasing and decreasing patterns,
+remove the common middle row to avoid duplication.
 
 Revision:
-    □ Rev1
-    □ Rev2
-    □ Rev3
-
-Notes:
+[ ] Rev 1
+[ ] Rev 2
+[ ] Rev 3
 """
+class Solution():
+    def pattern_10(self,n):
+        # Increasing triangle — omit last row
+        for i in range(n-1):
+            for j in range(i+1):
+                print("*", end=" ")
+            print()
+        #Decreasing triangle
+        for i in range(n):
+            for j in range(i,n):
+                print("*", end=" ")
+            print()
 
-def Half_diamond(n):
-    for i in range(n-1):
-        for j in range(i+1):
-            print("*", end=" ")
-        print()
-    for i in range(n):
-        for j in range(i,n):
-            print("*", end=" ")
-        print()
-
-Half_diamond(5)
-'''
-Observation: 
-patterns_01_rectangle: 5/8/2026
-
-Outer loop prints for rows n times from 0 to n-1
-Inner loop prints for n times from 0 to n-1
-Print was used inside the inner loop for printing the star and end=" "was added to keep the cursor on the same line
-print() was used in outer loop to jump to next line as end= " " kept cursor on the same line.
-
-mistakes: Forgot to add end in first inner loop 
-Did not reverse the second triangle
-
-'''
+if __name__ == "__main__":
+    sol=Solution()
+    n=5
+    sol.pattern_10(n)

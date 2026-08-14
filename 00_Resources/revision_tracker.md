@@ -1,17 +1,53 @@
-# 🔁 Revision Tracker
 
-Spaced-repetition style tracker. Revisit a solved problem after
-1 day → 1 week → 1 month, and rate your confidence each time.
 
-| Problem | Topic | Difficulty | Solved Alone | Revision 1 | Revision 2 | Revision 3 | Confidence (1-5) |
-|---------|-------|------------|---------------|------------|------------|------------|-------------------|
-|         |       |            | ☐             | ☐          | ☐          | ☐          |                   |
 
-## How To Use This File
-1. Add a row the day you first solve a problem.
-2. Mark **Solved Alone** if you solved it without hints.
-3. Schedule Revision 1 for ~1 day later, Revision 2 for ~1 week later,
-   Revision 3 for ~1 month later.
-4. Rate confidence 1 (shaky) to 5 (could explain it in an interview).
+
 
 _Last updated: 2026-08-05_
+
+# 📊 DSA Trackers
+
+## LeetCode Tracker
+
+I use Google Sheets to track:
+- Problems solved
+- Difficulty
+- Topic
+- Pattern
+- Attempts
+- Hints used
+- Date solved
+- Revision status
+
+[Open LeetCode Tracker](YOUR_GOOGLE_SHEET_LINK)
+
+---
+
+# 🔁 Revision Tracker
+
+I use Google Sheets to track:
+- Problems due for revision
+- Revision 1
+- Revision 2
+- Revision 3
+- Revision dates
+- Problems that need re-revision
+
+[Open Revision Tracker](https://docs.google.com/spreadsheets/d/1Ahp8D4ZKXRR0KMVT0WnAQOnIZxRUIUdu6H4PvK0TP4Y/edit?usp=sharing
+)
+
+---
+
+## Progress
+
+Current Phase:
+Level 1 — Foundations
+
+Current Topic:
+Pattern Printing
+
+Problems Completed:
+10
+
+Last Updated:
+14/08/2026
