@@ -1,589 +1,486 @@
+# Pattern Printing — Notes
 
-
-# Pattern Notes
-
-## Pattern 01: Rectangle
-
-![My handwritten notes](../handwritten_notes/01_patterns/1.jpg)
-
-**Date:** 05/08/2026
-
-### Observation
-
-* The **outer loop** runs `n` times, from `0` to `n - 1`, to control the rows.
-* The **inner loop** runs `n` times, from `0` to `n - 1`, to control the columns.
-* `print("*", end=" ")` is used inside the inner loop to print the stars while keeping the cursor on the same line.
-* `print()` is used after the inner loop to move the cursor to the next line because `end=" "` keeps the cursor on the same line.
-
-### Key Idea
-
-> Outer loop → Rows
-> Inner loop → Columns
+> Topic-level notes for understanding and solving pattern problems.
+> Individual problems, mistakes, dates, and revisions are documented
+> in their respective `.py` files and trackers.
+>
+> **Update this file only when you discover a genuinely new general rule — not after every pattern.**
 
 ---
 
-## Pattern 02: Right-Angled Triangle
+## 1. Core Mental Model
 
-![My handwritten notes](../handwritten_notes/01_patterns/2.jpeg)
+Most pattern problems can be understood through this thinking chain:
 
-**Date:** 11/08/2026
+```
+Rows
+  ↓
+What appears in each row
+  ↓
+How the number of elements changes
+  ↓
+How values change
+  ↓
+Translate the observation into loops
+```
 
-### Observation
-
-* The **outer loop** runs `n` times, from `0` to `n - 1`, to control the rows.
-* The **inner loop** runs from `0` to `i + 1`.
-* Since `i` increases with every row, the number of stars also increases with every row.
-* `print("*", end=" ")` is used inside the inner loop to print stars on the same line.
-* `print()` is used after the inner loop to move to the next line.
-
-### Key Idea
-
-The increasing pattern can be used to solve many similar pattern questions.
-
-### Mistake
-
-* Forgot to use `==` in:
+**Basic Loop Structure**
 
 ```python
-if __name__ == "__main__":
+for i in range(n):          # Rows
+    for j in range(...):    # Elements in the row
+        print(...)
+    print()                 # Move to next row
+```
+
+| Statement | Behaviour |
+|---|---|
+| Outer loop | Controls rows |
+| Inner loop | Controls content / columns |
+| `print(..., end=" ")` | Continue on same line |
+| `print()` | Move to next line |
+
+---
+
+## 2. Start With the Pattern, Not the Code
+
+Before writing a single loop, observe the pattern and answer these four steps in order.
+
+**Step 1 — How many rows?**
+This determines the outer loop: `for i in range(n)`
+
+**Step 2 — How many elements are in each row?**
+This determines what goes inside the inner loop.
+
+**Step 3 — What changes between rows?**
+
+Look for:
+- Increasing or decreasing elements
+- Increasing or decreasing numbers
+- Increasing or decreasing spaces
+- Values that reset each row vs values that continue across rows
+
+**Step 4 — Can the pattern be split into smaller parts?**
+
+Complex patterns are almost always made of simpler ones combined together.
+
+```
+Diamond      = Upper Pyramid  +  Lower Inverted Pyramid
+Half Diamond = Increasing Triangle  +  Decreasing Triangle
 ```
 
 ---
 
-## Pattern 03: Right-Angled Increasing Number Pyramid
+## 3. `range()` — The Main Shape Controller
 
-![My handwritten notes](../handwritten_notes/01_patterns/3.jpg)
+`range()` is the primary tool for controlling how many elements appear per row.
 
-![My handwritten notes](../handwritten_notes/01_patterns/4.jpg)
-
-**Date:** 13/08/2026
-
-### Observation
-
-When printing patterns with numbers, focus on two different parts:
-
-1. **Getting the basic pattern structure correct.**
-2. **Adjusting the logic** using variables and `if-else` statements to produce the desired number pattern.
-
-### Variable Logic
-
-* The variable `p` is initialized **inside the outer loop**.
-* This allows `p` to reset to its initial value at the beginning of every row.
-* `p` is incremented **inside the inner loop** using:
+**Fixed — same count every row**
 
 ```python
-p += 1
+for j in range(n):
+```
+```
+* * * *
+* * * *
+* * * *
+* * * *
 ```
 
-* This makes the number increase after every printed value.
-
-### Mistake
-
-* Initially kept `p = 1` outside the outer loop.
-* Keeping it inside the outer loop allows it to be initialized again for every new row.
-
-### Key Idea
-
-> If a variable needs to restart for every row → initialize it inside the outer loop.
-
 ---
 
-## Pattern 04: Right-Angled Number Rows Incrementing Pyramid
-
-**Date:** 13/08/2026
-
-### Observation
-
-When printing patterns with numbers, focus on two different parts:
-
-1. **Getting the basic pattern structure correct.**
-2. **Adjusting the logic** using variables and `if-else` statements to produce the desired number pattern.
-
-### Variable Logic
-
-* The variable `p` is initialized **outside the outer loop**.
-* This allows `p` to continue from one row to the next.
-* `p` is incremented **outside the inner loop**.
-* Therefore, the same value of `p` is printed throughout one complete row before moving to the next number.
-
-### Mistakes
-
-* The function name and the function call were not the same.
-* Used the trial value `1` directly inside the inner loop instead of using `p`.
-
-### Key Idea
-
-> If a variable needs to continue increasing after each row → keep it outside the outer loop.
-
----
-
-## Pattern 05: Decreasing Right-Angled Triangle
-
-**Date:** 13/08/2026
-
-### Observation
-
-* The **outer loop** runs `n` times, from `0` to `n - 1`, to control the rows.
-* The **inner loop** controls the decreasing number of stars.
-* The range is based on `i` and `n`, such as:
+**Increasing — more elements each row**
 
 ```python
-range(i, n)
+for j in range(i + 1):
+```
+```
+*
+* *
+* * *
+* * * *
+* * * * *
 ```
 
-* As `i` increases, the number of iterations of the inner loop decreases.
-* `print("*", end=" ")` is used inside the inner loop to print stars on the same line.
-* `print()` is used after the inner loop to move to the next line.
-
-### Key Idea
-
-> Increasing `i` while keeping `n` fixed reduces the number of inner-loop iterations.
+Row 0 → 1 element · Row 1 → 2 elements · Row `i` → `i + 1` elements
 
 ---
 
-## Pattern 06: Inverted Numbered Right Pyramid
-
-**Date:** 14/08/2026
-
-### Observation
-
-The goal is to have **increasing numbers in each row** while the number of columns decreases with every row.
-
-### Variable Logic
-
-1. Run the **outer loop** from `0` to `n - 1` to control the rows.
-2. Initialize `p = 1` **inside the outer loop** so that it resets to `1` at the beginning of every row.
-3. Run the **inner loop** from `i` to `n`:
+**Decreasing — fewer elements each row**
 
 ```python
 for j in range(i, n):
 ```
-
-4. Print `p` inside the inner loop.
-5. Increment `p` inside the inner loop:
-
-```python
-p += 1
+```
+* * * * *
+* * * *
+* * *
+* *
+*
 ```
 
-6. Since `p` is incremented inside the inner loop, the numbers increase across each row.
-7. After the inner loop finishes, use `print()` to move to the next line.
-
-### Pattern Logic
-
-```text
-Outer loop → Controls rows
-p = 1      → Resets number for every row
-Inner loop → Controls decreasing columns
-print(p)   → Prints current number
-p += 1     → Increases number after every print
-print()    → Moves to next row
-```
-
-### Key Idea
-
-> Initialize `p` inside the outer loop when the number needs to restart from `1` on every row.
+Row 0 → n elements · Row 1 → n−1 elements · Row `i` → `n − i` elements
 
 ---
 
-## Pattern 07: Hill Top
+**Off-by-one — one element too many or too few**
 
-**Date:** 12/08/2026
-
-### Observation
-
-The pattern is divided into multiple parts:
-
-1. An inner loop prints **spaces** to create the left indentation.
-2. An inner loop prints the **increasing number of stars**.
-3. Another inner loop completes the remaining stars required for the hill shape.
-4. `print()` is used after all inner loops to move to the next line.
-
-### Important Notes
-
-1. The newline `print()` statement should come **after all the inner loops**.
-2. The main spacing statement:
+When the shape is almost right but slightly off, adjust the boundary:
 
 ```python
-print(" ", end=" ")
+range(i, n - 1)    # one fewer element vs range(i, n)
+range(i + 1 + 1)   # one more element vs range(i + 1)
 ```
 
-should use the **same number of characters/spaces** consistently across the inner loops.
-
-### Mistake
-
-* The middle inner-loop range was not adjusted correctly.
-* The range needed to use `i` instead of `i + 1`.
-* One column had to be removed to achieve the correct hill-top shape.
-
-### Key Idea
-
-> For centered patterns, carefully control the number of spaces and columns removed/added in each part.
+> When a pattern is almost correct, inspect the `range()` boundaries first.
+> A difference of one changes the shape significantly.
 
 ---
 
-## Pattern 08: Reverse Hill Top
+## 4. Number Patterns
 
-**Date:** 12/08/2026
+When numbers appear instead of stars, separate two independent questions:
 
-### Observation
-
-The pattern is divided into multiple parts:
-
-1. An inner loop prints **spaces**.
-2. An inner loop controls the stars.
-3. The range is adjusted to decrease the number of columns.
-4. `print()` is used after all inner loops to move to the next line.
-
-### Important Notes
-
-1. The newline `print()` statement should come **after all the inner loops**.
-2. The spacing statement:
-
-```python
-print(" ", end=" ")
-```
-
-should use the same number of characters/spaces consistently.
-
-### Mistake
-
-* The middle inner-loop range was initially:
-
-```python
-range(i, n)
-```
-
-but one column needed to be removed.
-
-* It was changed to:
-
-```python
-range(i, n - 1)
-```
-
-to remove one column and obtain the correct reverse hill-top shape.
-
-### Key Idea
-
-> Sometimes changing the range by just one value, such as `n` → `n - 1`, is enough to correct the pattern.
+1. **How many values per row?** → inner loop controls this
+2. **How do the values change?** → a counter variable like `p` controls this
 
 ---
 
-## Pattern 09: Diamond
+**Variable resets every row** → `1 / 1 2 / 1 2 3 / ...`
 
-**Date:** 12/08/2026
-
-### Observation
-
-* The diamond is created by combining an **increasing hill** and a **decreasing reverse hill**.
-* One row is removed while combining the two parts so that the middle row is not printed twice.
-* The first part creates the upper half.
-* The second part creates the lower half.
-* Both parts use nested loops to control spaces and stars.
-
-### Pattern Structure
-
-The upper half follows:
-
-1. Outer loop → controls rows.
-2. Inner loop → prints decreasing spaces.
-3. Inner loop → prints increasing stars.
-4. Inner loop → prints the remaining stars.
-5. `print()` → moves to the next row.
-
-The lower half follows the reverse logic.
-
-### Important Notes
-
-1. The newline `print()` statement should come at the **end of all inner loops**.
-2. The spacing statement:
-
-```python
-print(" ", end=" ")
-```
-
-should use the same number of characters/spaces in all inner loops.
-3. One row should be removed while combining the two patterns to prevent duplication of the middle row.
-
-### Mistake
-
-* Did not remove one row while combining the increasing and decreasing patterns.
-* This caused the middle row to appear twice and disturbed the diamond shape.
-
-### Key Idea
-
-> Diamond = Increasing pattern + Decreasing pattern - 1 common middle row.
-
----
-
-## Pattern 10: Half Diamond
-
-**Date:** 12/08/2026
-
-### Observation
-
-* First, print the **increasing right-angled triangle**.
-* Then, print the **decreasing right-angled triangle** inside another `for` loop directly below it.
-* The two triangles together form a half-diamond shape.
-* One row needs to be removed when combining the two parts to avoid repeating the middle row.
-
-### Pattern Structure
-
-```text
-Increasing Triangle
-        +
-Decreasing Triangle
-        -
-One repeated middle row
-```
-
-### Mistake
-
-* Did not delete one row while combining the increasing and decreasing triangles.
-* This caused the middle row to be printed twice and disturbed the proper half-diamond shape.
-
-### Key Idea
-
-> Half Diamond = Increasing Triangle + Decreasing Triangle - 1 common middle row.
-
----
-
-# General Pattern Programming Notes
-
-## 1. Understand the Loop Structure
-
-For most pattern problems:
-
-```text
-Outer loop → Rows
-Inner loop → Columns
-```
-
-The outer loop decides **how many rows** are printed.
-
-The inner loop decides **what is printed inside each row**.
-
----
-
-## 2. Understand `print()` and `end`
-
-Normally:
-
-```python
-print("*")
-```
-
-prints `*` and moves to the next line.
-
-To stay on the same line:
-
-```python
-print("*", end=" ")
-```
-
-After the inner loop finishes:
-
-```python
-print()
-```
-
-moves the cursor to the next line.
-
-Therefore:
+Initialize `p` **inside** the outer loop so it resets to 1 for each new row.
 
 ```python
 for i in range(n):
-    for j in range(n):
+    p = 1                      # ← inside = resets each row
+    for j in range(i + 1):
+        print(p, end=" ")
+        p += 1
+    print()
+```
+
+```
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+```
+
+---
+
+**Variable continues across rows** → `1 / 2 2 / 3 3 3 / ...`
+
+Initialize `p` **outside** the outer loop so it keeps its value between rows.
+
+```python
+p = 1                          # ← outside = continues across rows
+for i in range(n):
+    for j in range(i + 1):
+        print(p, end=" ")
+    p += 1
+    print()
+```
+
+```
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+```
+
+---
+
+## 5. Where Should the Increment Go?
+
+The position of `p += 1` decides what triggers the change.
+
+**Inside inner loop → value changes after every element**
+
+```python
+for j in range(n):
+    print(p, end=" ")
+    p += 1
+```
+
+Output: `1 2 3 4 5`
+
+---
+
+**Outside inner loop, inside outer loop → value changes after every row**
+
+```python
+for j in range(i + 1):
+    print(p, end=" ")
+p += 1
+```
+
+Output per row: `3 3 3` → then next row gets `4 4 4 4`
+
+---
+
+| Increment location | What changes |
+|---|---|
+| Inside inner loop | After every single element |
+| Outside inner loop (inside outer) | After every complete row |
+
+---
+
+## 6. Spaces and Centered Patterns
+
+A pyramid is not just stars — it is **spaces + stars on the same row**, both changing as `i` changes.
+
+```
+    *              row 0: spaces = n-1, stars = 1
+   * * *           row 1: spaces = n-2, stars = 3
+  * * * * *        row 2: spaces = n-3, stars = 5
+ * * * * * * *     row 3: spaces = n-4, stars = 7
+* * * * * * * * *  row 4: spaces = 0,   stars = 9
+```
+
+Pattern: as `i` increases → **spaces decrease, stars increase by 2**.
+
+```python
+for i in range(n):
+    for j in range(n - i - 1):    # decreasing spaces
+        print(" ", end=" ")
+    for j in range(2 * i + 1):    # increasing stars
         print("*", end=" ")
     print()
 ```
 
-means:
+> Keep the character width consistent — mixing `" "` and `"  "` in the same pattern
+> breaks alignment and the shape looks wrong.
 
-```text
-Outer loop → Start a new row
-Inner loop → Print everything in that row
-print()    → Move to the next row
+**Reverse pyramid** — same idea, but spaces increase and stars decrease:
+
+```
+* * * * * * * * *  row 0: spaces = 0,   stars = 2n-1
+ * * * * * * *     row 1: spaces = 1,   stars = 2n-3
+  * * * * *        row 2: spaces = 2,   stars = 2n-5
+   * * *           row 3: spaces = 3,   stars = 3
+    *              row 4: spaces = n-1, stars = 1
 ```
 
 ---
 
-## 3. Range Is the Main Pattern-Control Mechanism
+## 7. Building Complex Patterns
 
-Small changes in `range()` can completely change the pattern.
+Never look at a complex pattern as one problem. Break it into known parts.
 
-Examples:
+**Diamond = Upper Pyramid + Lower Inverted Pyramid**
 
-```python
-range(n)
-range(i + 1)
-range(i, n)
-range(i, n - 1)
+```
+    *         ← Pyramid starts
+   * * *
+  * * * * *
+   * * *      ← Inverted pyramid starts
+    *
 ```
 
-### General Observation
+**Half Diamond = Increasing Triangle + Decreasing Triangle**
 
-* `range(n)` → fixed number of iterations.
-* `range(i + 1)` → increasing iterations.
-* `range(i, n)` → decreasing iterations as `i` increases.
-* `range(i, n - 1)` → decreasing iterations with one fewer column.
+```
+*             ← Increasing starts
+* *
+* * *
+* *           ← Decreasing starts
+*
+```
 
-> **When a pattern looks almost correct, check the `range()` first.**
+**Strategy every time:**
+
+```
+Identify Part 1
+      ↓
+Identify Part 2
+      ↓
+Solve each part independently
+      ↓
+Combine them
+      ↓
+Check the joining row — is it printed twice?
+```
 
 ---
 
-## 4. Variable Placement Matters
+## 8. Avoiding the Duplicate Middle Row
 
-Where a variable is initialized determines how it behaves.
+When two patterns are combined, the last row of Part 1 and the first row of Part 2 are usually the same row. If you print both parts fully, it appears twice.
 
-### Initialize Inside the Outer Loop
+**Example — Combining for a Diamond (n = 5)**
 
-```python
-for i in range(n):
-    p = 1
+```
+Part 1 (Pyramid)      Part 2 (Inverted Pyramid)
+    *                 * * * * * * * * *
+   * * *              * * * * * * *
+  * * * * *           * * * * *
+ * * * * * * *        * * *
+* * * * * * * * *     *
 ```
 
-Use this when `p` needs to **restart for every row**.
+Widest row `* * * * * * * * *` appears at the end of Part 1 AND start of Part 2 → printed twice.
 
-### Initialize Outside the Outer Loop
+**Fix:** Run Part 1 with `range(n - 1)` to skip its last row, then Part 2 fully with `range(n)`.
 
 ```python
-p = 1
+# Part 1 — pyramid, skip last row
+for i in range(n - 1):
+    ...
 
+# Part 2 — inverted pyramid, full
 for i in range(n):
     ...
 ```
 
-Use this when `p` needs to **continue from the previous row**.
+> This applies to Diamond and Half Diamond both.
 
 ---
 
-## 5. Variable Incrementation Matters
+## 9. Pattern Building Blocks Reference
 
-### Increment Inside the Inner Loop
+| Block | Key Idea | Inner range |
+|---|---|---|
+| Rectangle | Fixed elements per row | `range(n)` |
+| Increasing triangle | More elements each row | `range(i + 1)` |
+| Decreasing triangle | Fewer elements each row | `range(i, n)` |
+| Increasing number pattern | Value increases across the row | `range(i + 1)` + `p` inside |
+| Repeated row number | Same value across whole row | `range(i + 1)` + `p` outside |
+| Decreasing number pattern | Fewer elements + values grow | `range(i, n)` + `p` |
+| Pyramid | Spaces decrease + stars increase | Two inner loops |
+| Reverse pyramid | Stars decrease + spaces increase | Two inner loops |
+| Diamond | Pyramid + Reverse pyramid | Combined with seam fix |
+| Half diamond | Increasing + Decreasing triangle | Combined with seam fix |
 
-```python
-for j in range(...):
-    print(p)
-    p += 1
+```
+Rect.       Incr. Tri.   Decr. Tri.     Pyramid        Rev. Pyramid
+* * * *     *            * * * * *          *            * * * * *
+* * * *     * *          * * * *          * * *            * * *
+* * * *     * * *        * * *          * * * * *            *
+* * * *     * * * *      * *
+            * * * * *    *
 ```
 
-The value changes **after every printed element**.
-
-### Increment Outside the Inner Loop
-
-```python
-for j in range(...):
-    print(p)
-
-p += 1
-```
-
-The same value is printed throughout the row, and the value changes **after the complete row**.
+> The goal is not to memorize 10 separate codes.
+> The goal is to **recognize which building blocks a new pattern is made from**.
 
 ---
 
-# Common Mistakes
+## 10. Problem-Solving Checklist
 
-* Forgetting `==` in:
+Use this every time you see a new pattern before touching the keyboard.
+
+- [ ] How many rows? → outer loop
+- [ ] How many elements per row? → inner loop
+- [ ] Increasing or decreasing?
+- [ ] Printing stars / numbers / spaces / something else?
+- [ ] Does the variable reset every row or continue across rows?
+- [ ] Does the value change every element or every row?
+- [ ] What is the exact inner `range()`?
+- [ ] Can this split into two simpler patterns?
+- [ ] After combining — is the middle row printed twice?
+- [ ] Final check: extra column? Missing column? Wrong spacing?
+
+---
+
+## 11. Common Mistakes to Watch For
+
+- Wrong `range()` boundary — off by one
+- Hardcoded value instead of using a variable
+- Variable initialized in the wrong scope (inside vs outside outer loop)
+- Increment `p += 1` placed in the wrong loop (per element vs per row)
+- Forgetting to reset a variable that should restart each row
+- Accidentally continuing a variable that should reset
+- Duplicate middle row when combining two patterns
+- Inconsistent space width in centered patterns breaking alignment
+- Calling `print()` before the full row is complete
+- Function name and function call not matching
+- Writing `=` instead of `==` in:
 
 ```python
 if __name__ == "__main__":
 ```
 
-* Keeping a variable outside the outer loop when it needs to reset for every row.
-* Keeping a variable inside the outer loop when it needs to continue across rows.
-* Incrementing a variable in the wrong loop.
-* Using a hardcoded value such as `1` instead of the required variable.
-* Function name and function call not matching.
-* Incorrect `range()` boundaries.
-* Forgetting to remove one column from a pattern.
-* Forgetting to remove one row when combining two patterns.
-* Using inconsistent spacing in centered patterns.
-* Placing `print()` before all inner loops have completed.
+---
+
+## 12. Quick Revision Summary
+
+**Loop**
+```
+Outer loop   → Rows
+Inner loop   → Elements in each row
+```
+
+**range()**
+```
+range(n)       → Fixed count per row
+range(i + 1)   → Increasing count
+range(i, n)    → Decreasing count
+```
+
+**Variable scope**
+```
+p inside outer loop   → Resets every row
+p outside outer loop  → Continues across rows
+```
+
+**Increment placement**
+```
+p += 1 inside inner loop  → Changes every element
+p += 1 outside inner loop → Changes every row
+```
+
+**Spaces**
+```
+spaces = n - i - 1   (decreasing)
+stars  = 2 * i + 1   (increasing)
+```
+
+**Combining**
+```
+Part 1 with range(n - 1)   → skip last row
+Part 2 with range(n)       → full
+→ middle row printed exactly once
+```
+
+> **Understand the pattern first. Write the loops second.**
 
 ---
 
-# Pattern Problem-Solving Approach
+## File System for This Topic
 
-When solving a new pattern, follow this order:
+```
+pattern_01_rectangle.py   → What happened in THIS problem
+notes_patterns.md         → What can I reuse in FUTURE problems
+mistakes.md               → What mistakes keep happening to ME
+journal/                  → How is my learning journey going
+Google Sheets             → What have I solved and what needs revision
+```
+'''
+Just for my reference to add notes: 
 
-## Step 1: Identify the Rows
 
-Ask:
+The way to use it going forward:
 
-> How many rows are there?
+- **Section 9 (Building Blocks)** — add new blocks to the table as you learn them
+- **Section 11 (Common Mistakes)** — add any new mistake you make that isn't already listed
+- **Section 12 (Quick Revision Summary)** — add any new shorthand rule that you want to remember fast
+- **Sections 1–8** — these are fundamentals, they won't change much. Only touch them if a new pattern teaches you something genuinely different that doesn't fit anywhere else
 
-This determines the **outer loop**.
+The individual `.py` files handle the problem-specific stuff. This file stays at the topic level — rules you can reuse, not notes about one specific problem.
 
----
+So the workflow is:
 
-## Step 2: Identify the Columns
+```
+Solve new pattern
+      ↓
+Document it in pattern_XX.py
+      ↓
+Ask: did I learn a new general rule?
+      ↓
+Yes → add one line to notes_patterns.md
+No  → leave it alone
+```
 
-Ask:
-
-> How many characters are printed in each row?
-
-This determines the **inner loop** and its `range()`.
-
----
-
-## Step 3: Identify What Changes
-
-Ask:
-
-> Does the number of stars, spaces, or numbers increase or decrease?
-
-This determines how `i`, `j`, or another variable should be used.
-
----
-
-## Step 4: Identify Variable Behavior
-
-Ask:
-
-> Should the variable reset on every row or continue from the previous row?
-
-This determines whether the variable belongs **inside or outside the outer loop**.
-
----
-
-## Step 5: Check Spacing
-
-For centered patterns, make sure the spaces printed by different inner loops have consistent character width.
-
----
-
-## Step 6: Combine Patterns When Necessary
-
-Complex patterns such as:
-
-* Hill Top
-* Reverse Hill Top
-* Diamond
-* Half Diamond
-
-can often be solved by combining simpler patterns.
-
-> **Break a complex pattern into smaller patterns first, then combine them.**
-
----
-
-# Core Takeaways
-
-1. **Outer loop = rows.**
-2. **Inner loop = columns/content of each row.**
-3. `end=" "` keeps printing on the same line.
-4. `print()` moves to the next line.
-5. `range()` controls the shape of the pattern.
-6. Increasing `i` can naturally create increasing or decreasing patterns depending on the range.
-7. Initialize a variable inside the outer loop when it needs to reset for every row.
-8. Initialize a variable outside the outer loop when it needs to continue across rows.
-9. Increment inside the inner loop when the value should change after every element.
-10. Increment outside the inner loop when the value should change after every row.
-11. Centered patterns require careful control of spaces.
-12. Complex patterns can usually be broken into smaller patterns and then combined.
-13. When a pattern is almost correct, first inspect the `range()` values.
-14. When combining two patterns, check whether a common row needs to be removed.
-15. **Understand the pattern first, then write the loops.**
+'''
