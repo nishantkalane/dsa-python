@@ -7,8 +7,7 @@ adding revision notes in `revision_tracker.md`.
 ## Phase 1 — Foundations
 - [X] Learn Basics of Python such as input/output, if else, loops and functions
 - [X] Time Complexity
-- [ ] Star Patterns
-      - [X] Rectangle, [X] Right Angled Triangle
+- [ ] Star, Character, Numbers Patterns
 - [ ] Sorting
 - [ ] Arrays
 - [ ] Binary Search

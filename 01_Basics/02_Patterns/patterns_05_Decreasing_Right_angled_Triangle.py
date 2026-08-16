@@ -33,7 +33,7 @@ Space Complexity:
 O(1)
 
 Date Solved:
-13/08/2026
+14/08/2026
 
 Mistake:
 Used range(5) instead of range(n), which makes the

@@ -33,7 +33,7 @@ Space Complexity:
 O(1)
 
 Date Solved:
-13/08/2026
+12/08/2026
 
 Mistake:
 Initially kept p = 1 outside the outer loop.

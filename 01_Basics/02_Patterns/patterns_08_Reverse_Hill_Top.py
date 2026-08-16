@@ -36,7 +36,7 @@ Space Complexity:
 O(1)
 
 Date Solved:
-12/08/2026
+14/08/2026
 
 Mistake:
 Initially used range(i, n) in the first star loop.
