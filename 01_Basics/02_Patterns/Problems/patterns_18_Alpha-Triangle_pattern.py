@@ -19,15 +19,20 @@ Difficulty:
 
 Approach:
 -
-
+- The goal is to print a pattern of alphabets where row starts with letter and moves down to A as we go down the row
+   - initialize a variable outside so that it can be decremented to have a new letter each row to start with
+   -loop through each row i = 0 to n-1
+   - initialize another variable k=p which will be helpful to print the pattern column wis
+   - in inner loop print the k and then keep on adding so that it reaches the final E's index
+   - subtact the first variable outside the inner loop to set it one less so in inner loop in next round we progress upto our desired letter
 Time Complexity:
--
+- O(N^2)
 
 Space Complexity:
--
+- O(1)
 
 Date Solved:
--
+-17- Aug-2026
 
 Mistake:
 - Struggling with how to print the reverse of the alphabets
