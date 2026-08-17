@@ -50,12 +50,17 @@ Revision:
 class Solution:
 
     def solve(self,n):
+        #varible to initialize to ascii 69 and have it reduced every row
         p = ord("E")
         for i in range(n):
+            #variable to keep the column wise printing
             k=p
             for j in range(i+1):
+
                 print(chr(k), end=" ")
+                #increase upto desired letter's index
                 k +=1
+            #Decrease to start from one lesser index
             p -=1
             print()
 
