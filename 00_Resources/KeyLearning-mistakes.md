@@ -14,5 +14,13 @@
 - Incrementing can be done properly if we want the mirror pattern and for the second time -by subtracting beforehand of printing the second time(i.e the mirror side)
 - ascii A= 65  , a = 97, 0 =48
 - use chr(ascii) function to print the letter at particular ascii index
+- Keep p outside the outer loop to continue character incrementation across rows.
+-For hill patterns, increment the variable in the growing loop, then decrement it in the decreasing loop.
+- Problem: Printing the reverse alphabet pattern
+Mistake: Struggled with generating the reverse order of alphabets.
+Key Takeaway: Use one variable to shift the starting character each row and another to reset and increment within the row; use ord("E") instead of memorizing ASCII values.
 
-Last Updated: 16-Aug-2026
+
+
+
+Last Updated: 17-Aug-2026
