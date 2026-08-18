@@ -19,8 +19,10 @@
 - Problem: Printing the reverse alphabet pattern
 Mistake: Struggled with generating the reverse order of alphabets.
 Key Takeaway: Use one variable to shift the starting character each row and another to reset and increment within the row; use ord("E") instead of memorizing ASCII values.
+- - When splitting a row into two loops, make sure they cover the range exactly once—no gaps, no overlaps. Always trace a small case by hand to catch off-by-one errors.
+- To print the number pattern in decreasing way and in square perimeters,
+we first increase input to right input and then print the matrix of minimum distance, and we will minus the minimum distance pattern from our main input
 
 
 
-
-Last Updated: 17-Aug-2026
+Last Updated: 18-Aug-2026

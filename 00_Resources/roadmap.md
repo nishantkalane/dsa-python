@@ -7,7 +7,7 @@ adding revision notes in `revision_tracker.md`.
 ## Phase 1 — Foundations
 - [X] Learn Basics of Python such as input/output, if else, loops and functions
 - [X] Time Complexity
-- [ ] Star, Character, Numbers Patterns
+- [X] Star, Character, Numbers Patterns
 - [ ] Sorting
 - [ ] Arrays
 - [ ] Binary Search
@@ -77,4 +77,4 @@ adding revision notes in `revision_tracker.md`.
 - [ ] Math for DSA
 - [ ] Mock Interviews & Timed Contests
 
-_Last updated: 2026-08-05_
+_Last updated: 18-Aug-2026
