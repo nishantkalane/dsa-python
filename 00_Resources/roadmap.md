@@ -8,6 +8,7 @@ adding revision notes in `revision_tracker.md`.
 - [X] Learn Basics of Python such as input/output, if else, loops and functions
 - [X] Time Complexity
 - [X] Star, Character, Numbers Patterns
+- [ ] Advanced Basics for DSA
 - [ ] Sorting
 - [ ] Arrays
 - [ ] Binary Search
