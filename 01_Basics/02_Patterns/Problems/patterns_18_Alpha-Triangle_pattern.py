@@ -24,7 +24,7 @@ Approach:
    -loop through each row i = 0 to n-1
    - initialize another variable k=p which will be helpful to print the pattern column wis
    - in inner loop print the k and then keep on adding so that it reaches the final E's index
-   - subtact the first variable outside the inner loop to set it one less so in inner loop in next round we progress upto our desired letter
+   - subtact the first variable outside the inner loop to 03_set it one less so in inner loop in next round we progress upto our desired letter
 Time Complexity:
 - O(N^2)
 
