@@ -1,5 +1,23 @@
 # Pattern Printing — Notes
 
+## Page 1
+![Handwritten Notes - Page 1](../../handwritten_notes/01_patterns/1.jpg)
+
+## Page 2
+![Handwritten Notes - Page 2](../../handwritten_notes/01_patterns/2.jpeg)
+
+## Page 3
+![Handwritten Notes - Page 3](../../handwritten_notes/01_patterns/3.jpg)
+
+## Page 4
+![Handwritten Notes - Page 4](../../handwritten_notes/01_patterns/4.jpg)
+
+## Page 5
+![Handwritten Notes - Page 5](../../handwritten_notes/01_patterns/5.jpg)
+
+## Page 6
+![Handwritten Notes - Page 6](../../handwritten_notes/01_patterns/6.jpg)
+
 > Topic-level notes for understanding and solving pattern problems.
 > Individual problems, mistakes, dates, and revisions are documented
 > in their respective `.py` files and trackers.

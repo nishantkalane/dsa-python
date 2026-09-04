@@ -1,4 +1,14 @@
+## Page 1
+![Handwritten Notes - Page 7](../../handwritten_notes/01_patterns/7.jpeg)
 
+## Page 2
+![Handwritten Notes - Page 8](../../handwritten_notes/01_patterns/8.jpeg)
+
+## Page 3
+![Handwritten Notes - Page 9](../../handwritten_notes/01_patterns/9.jpeg)
+
+## Page 4
+![Handwritten Notes - Page 10](../../handwritten_notes/01_patterns/10.jpeg)
 ### 1. `list` ⭐
 - **Core idea:** Ordered, mutable sequence; duplicates allowed.
 - `a[i]` → access O(1)
