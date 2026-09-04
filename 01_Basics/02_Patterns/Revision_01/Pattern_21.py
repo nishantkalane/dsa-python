@@ -1,5 +1,5 @@
 class Solution:
-    def pattern_20(self,n):
+    def pattern_21(self,n):
        for i in range(n):
            for j in range(i):
                if i == 0 or j ==0 or i==n-1 or j == n-1:
@@ -21,4 +21,4 @@ if __name__ == "__main__" :
     sol=Solution()
 
     n=4
-    sol.pattern_20(n)
+    sol.pattern_21(n)
