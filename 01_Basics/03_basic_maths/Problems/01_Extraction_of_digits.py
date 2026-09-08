@@ -39,10 +39,6 @@ Key Takeaway:
 - Take Modulo by 10 for extracting last digit, and divide by 10 to remove last digit
 
 
-Revision:
-[ ] Rev 1
-[ ] Rev 2
-[ ] Rev 3
 """
 
 
