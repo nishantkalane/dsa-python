@@ -33,7 +33,7 @@ Date Solved:
 Mistake:
 -Base condition i should be if i <1 and not if i >1 as we will be backtracking
 Key Takeaway:
-- To make the forward recursion print the value before calling the recursive function
+-Base condition i should be if i <1 and not if i >1 as we will be backtracking
 """
 
 class Solution:

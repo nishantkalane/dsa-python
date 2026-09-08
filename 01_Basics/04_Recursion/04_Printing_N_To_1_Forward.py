@@ -37,8 +37,8 @@ Date Solved:
 
 Key Takeaway:
 In forward recursion, when you want to print numbers from n down to 1,
-print the current value before making the recursive call and decrease the value by 1 in each call."""
-
+print the current value before making the recursive call and decrease the value by 1 in each call.
+"""
 class Solution:
     def solve(self,i,n):
         if i <1:

@@ -10,6 +10,7 @@ adding revision notes in `revision_tracker.md`.
 - [X] Star, Character, Numbers Patterns
 - [X] Advanced Basics for DSA
 - [X] Basic Maths
+- [X] Recursion
 - [ ] Sorting
 - [ ] Arrays
 - [ ] Binary Search
