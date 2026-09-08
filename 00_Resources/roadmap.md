@@ -9,6 +9,7 @@ adding revision notes in `revision_tracker.md`.
 - [X] Time Complexity
 - [X] Star, Character, Numbers Patterns
 - [X] Advanced Basics for DSA
+- [X] Basic Maths
 - [ ] Sorting
 - [ ] Arrays
 - [ ] Binary Search

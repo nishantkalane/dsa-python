@@ -23,6 +23,40 @@ Key Takeaway: Use one variable to shift the starting character each row and anot
 - To print the number pattern in decreasing way and in square perimeters,
 we first increase input to right input and then print the matrix of minimum distance, and we will minus the minimum distance pattern from our main input
 
+### Key Learning, Mistakes :  **Basic Maths** section
+### Key Learning
+
+```markdown
+## Key Learning
+
+- `% 10` → extract last digit | `// 10` → remove last digit
+- Digit-by-digit processing → usually **O(log N)**
+- Reverse: `rev = rev * 10 + digit`
+- Armstrong → sum of `digit ^ number_of_digits`
+- Divisors occur in pairs → check only till **√N**
+- Prime → exactly **2 divisors**; check till **√N**
+- GCD ≤ `min(a,b)`; best approach → **Euclidean Algorithm**
+- Euclidean: `GCD(a,b) = GCD(b, a % b)`
+- `i*i <= n` → include √N
+- Save `dup = n` when original value is needed after modifying `n`
+```
+
+### Common Mistakes
+
+```markdown
+## Common Mistakes
+
+- Using `/` instead of `//` for integer division
+- Confusing `% 10` (extract) with `// 10` (remove)
+- Forgetting to preserve the original number
+- Using wrong power in Armstrong → power = number of digits
+- Checking divisors till `N` instead of `√N`
+- Using `i*i < n` instead of `i*i <= n`
+- Counting √N twice for perfect squares
+- Treating `1` as a prime number
+- Using `&` instead of `and` in Python
+- Using brute-force GCD when Euclidean Algorithm is available
+```
 
 
-Last Updated: 18-Aug-2026
+Last Updated: 8-Sep-2026
