@@ -1,11 +1,10 @@
 
-
-
-
-
 _Last updated: 2026-08-05_
 
 # 📊 DSA Trackers
+### Want a copy of the DSA Revision Tracker?
+- Email me at nishantnkalane@gmail.com
+- Use the subject “DSA Revision Tracker”, and I’ll share a copy.
 
 ## LeetCode Tracker
 
@@ -19,8 +18,6 @@ I use Google Sheets to track:
 - Date solved
 - Revision status
 
-[Open LeetCode Tracker](YOUR_GOOGLE_SHEET_LINK)
-
 ---
 
 # 🔁 Revision Tracker
@@ -33,8 +30,6 @@ I use Google Sheets to track:
 - Revision dates
 - Problems that need re-revision
 
-[Open Revision Tracker](https://docs.google.com/spreadsheets/d/1Ahp8D4ZKXRR0KMVT0WnAQOnIZxRUIUdu6H4PvK0TP4Y/edit?usp=sharing
-)
 
 ---
 
@@ -50,4 +45,4 @@ Problems Completed:
 10
 
 Last Updated:
-10/09/2026
+11/09/2026
