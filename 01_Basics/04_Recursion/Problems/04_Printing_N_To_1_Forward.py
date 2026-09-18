@@ -53,6 +53,6 @@ if __name__ == "__main__":
     # Test your solution here
     inp = int(input("How many times you want to print a number? "))
 
-    solution.solve(3,inp)
+    solution.solve(inp,inp)
 
 
