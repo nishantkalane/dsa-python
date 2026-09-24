@@ -28,7 +28,7 @@ Key Takeaway:
 class Solution:
 
     def solve(self, n):
-
+        pass
 
 
 
