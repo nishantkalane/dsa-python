@@ -11,7 +11,7 @@ Output: 21
 Explanation: 1+2+3+4+5+6=15
 
 Platform:
-Strivers sheet
+DSA sheet
 
 Topic:
 Number properties
@@ -42,10 +42,6 @@ class Solution:
 
     def solve(self, n):
         return (n*(n+1))//2
-
-
-
-
 
 if __name__ == "__main__":
     solution = Solution()
