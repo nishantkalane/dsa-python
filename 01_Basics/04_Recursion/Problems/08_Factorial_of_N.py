@@ -11,27 +11,19 @@ Difficulty:
 medium
 
 Approach:
-Instead of looping, we can solve the problem using recursion by defining the sum of the first N natural numbers as:
-
-sum(N) = N + sum(N-1), with the base case sum(1) = 1.
-
-Recursive way of calculating the sum of first N Natural Numbers:
- Define a recursive function to calculate the sum of natural numbers.
- If the input is the smallest natural number, return it directly as the base case.
- Otherwise, add the current number to the result of calling the same function with the previous number.
- Repeat this process until the base case is reached.
- The results from each call combine to give the final sum.
+Base Case: if n ==0, return 1.
+Recursive case: return n * solve(n-1)
+continue until n=0
 
 
-Time Complexity: O(N), as we iterate from 1 to N performing constant-time operation for each iteration.
-Space Complexity : O(1), as the space used by the algorithm does not increase with the size of the input..
-
+Time Complexity: O(N), one recursive call for each value from n to 0
+Space Complexity : O(1), recursion stack stores n calls
 Date Solved:
--07-SEP-2026
+-27-SEP-2026
 
-Mistake:
 Key Takeaway:
-
+Factorial using recursion: n! = n × (n-1)!, with 0! = 1.
+and see that recursive call is made perfectly with deduction
 
 """
 
@@ -39,14 +31,15 @@ Key Takeaway:
 class Solution:
 
     def solve(self, n):
-        pass
-
+        if n== 0:
+            return 1
+        return n* self.solve(n-1)
 
 
 if __name__ == "__main__":
     solution = Solution()
 
     # Test your solution
-    inp = 6
+    inp = 7
     result = solution.solve(inp)
     print(result)

@@ -42,6 +42,7 @@ Mistake: see that n //  i !=n doesn't count the n as a divisor in our way as per
 
 Key Takeaway:
 For divisor problems, iterate only up to √n and pair factors using i and n/i and missing n by the condition n/i is not equal to n.
+
 """
 
 
