@@ -1,0 +1,13 @@
+class Solution:
+    def solve(self,n):
+        if n  <0:
+            return 0
+        else:
+            return n+self.solve(n-1)
+if __name__ == "__main__":
+    sol = Solution()
+    inp = 5
+    r=sol.solve(inp)
+    print(r)
+# TC = O(N)
+# SC= O(N)
