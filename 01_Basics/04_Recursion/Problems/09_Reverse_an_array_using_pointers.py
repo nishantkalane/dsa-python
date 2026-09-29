@@ -1,7 +1,14 @@
+
 """
 Problem:
 Reverse an Array Using Recursion and Two Pointers
 
+Example 1:
+Input : nums = [1, 2, 3, 4, 5]
+Output : [5, 4, 3, 2, 1]
+Example 2:
+Input : nums = [1, 3, 3, 3, 5]
+Output : [5, 3, 3, 3, 1]
 
 Platform:
 DSA Sheet
@@ -35,13 +42,11 @@ In two pointer recursion, swap the elements at the current pointers. then move b
 
 class Solution:
 
-    def solve(self, arr,l,r):
+    def solve(self, arr, l, r):
         if l >= r:
             return
-        arr[l] , arr[r] = arr[r],arr[l]
-        self.solve(arr,l+1,r-1)
-
-
+        arr[l], arr[r] = arr[r], arr[l]
+        self.solve(arr, l + 1, r - 1)
 
 
 if __name__ == "__main__":
@@ -49,8 +54,8 @@ if __name__ == "__main__":
 
     # Test your solution
 
-    array=list(map(int,input("Enter the numbers for the array to sap spearted by ',' : ").split(",")))
+    array = list(map(int, input("Enter the numbers for the array to sap spearted by ',' : ").split(",")))
     left = 0
-    right =len(array)-1
-    solution.solve(array,left,right)
+    right = len(array) - 1
+    solution.solve(array, left, right)
     print(array)
