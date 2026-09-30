@@ -1,10 +1,10 @@
 """
 Problem:
 Platform:
-Link:
+
 
 Topic:
-Pattern:
+
 Difficulty:
 
 Approach:
