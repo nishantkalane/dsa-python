@@ -17,26 +17,31 @@ Platform:
 DSA Sheet
 
 Topic:
+Recursion -> String -> True
 
 Difficulty:
-
+-Easy
 Approach:
--
+-Start form the first character at index i=0.
+-Compare the current position with its corresponding position form the end, n-i-1
+-Swap these two characters.
+-Recursively move to the next index using i +1
+- Stop when i >= n//2, because all required swaps are completed
+-  Join the character array and return the reversed string
 
 Time Complexity:
--
+- O (N) each character is processed at most once
 
 Space Complexity:
--
+- O(N) Recursion stack takes O(N) space
 
 Date Solved:
 - 1 - OCT - 2026
 
 Mistake:
--
-
+-conversion of string to list and list to string
 Key Takeaway:
--
+- Swap the firs and the last characters, turn sting in to list using list() and back in string using "".join(), do recursively move both ends towards the center
 
 """
 
