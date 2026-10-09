@@ -17,7 +17,7 @@ continue until n=0
 
 
 Time Complexity: O(N), one recursive call for each value from n to 0
-Space Complexity : O(1), recursion stack stores n calls
+Space Complexity : O(N), recursion stack stores n calls
 Date Solved:
 -27-SEP-2026
 
