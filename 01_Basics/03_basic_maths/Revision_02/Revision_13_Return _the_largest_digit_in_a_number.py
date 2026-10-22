@@ -14,3 +14,6 @@ if __name__ == "__main__":
     sol=Solution()
     inp = int(input("Enter a number to get the largest digit in it: "))
     sol.solve(inp)
+
+# TC= O(N)
+# # SC= O(1)

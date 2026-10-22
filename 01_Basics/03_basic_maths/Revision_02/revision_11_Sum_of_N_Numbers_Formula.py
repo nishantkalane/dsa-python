@@ -6,3 +6,6 @@ if __name__ == "__main__":
     sol=Solution()
     inp = int(input("Enter a number to find out the number of digits in it: "))
     sol.solve(inp)
+
+# TC : O(1)
+# SC : O(1)
