@@ -9,10 +9,6 @@ class Solution:
             prefix +=num[0][j]
         return prefix
 
-
-
-
-
 if __name__ == "__main__":
     sol = Solution()
 
