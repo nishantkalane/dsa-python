@@ -5,6 +5,8 @@ Platform:
 
 Topic:
 
+Pattern:
+
 Difficulty:
 
 Approach:
