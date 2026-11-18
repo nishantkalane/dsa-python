@@ -35,7 +35,7 @@ Time Complexity:
 Space Complexity:
 - O(1), in-place sorting without using an extra array.
 
-Date Solved: 5 Nov 2026
+Date Solved: 6 Nov 2026
 
 Mistake:
 - Initially needed clarification about the difference between shifting and adjacent swapping approaches.
